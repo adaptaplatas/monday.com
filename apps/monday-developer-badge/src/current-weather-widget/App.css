@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.app {
+    height: 100%;
+    width: 98%;
+    padding: 10px 0 10px 10px;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card-component {
+    padding: 10px;
+    width: 312px;
+    box-shadow: 1px 0 3px 1px lightgrey;
+    border-radius: 4px;
+    height: 100%;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-title {
+    display: flex;
+    width: 58%;
+    margin: 0 0px;
+    box-sizing: border-box;
+    padding: 0 5px;
+    word-break: break-word;
+    align-items: center;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    width: 42%;
+}
+
+.card-component .image {
+    height: 50px;
+    margin-left: auto;
+}

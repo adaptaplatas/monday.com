@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.app {
+  height: 100%;
+    width: 98%;
+    padding-left: 10px;
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

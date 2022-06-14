@@ -1,0 +1,67 @@
+{
+    "name": "monday-developer-badge",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start:board-view": "npm run stop && concurrently \"npm run server\" \"npm run expose:board-view\"",
+        "start:integration": "npm run stop && concurrently \"npm run express\" \"npm run expose:integration\"",
+        "build": "react-scripts build",
+        "expose:board-view": "lt --port 8301 --subdomain board-view",
+        "expose:integration": "lt --port 49000 --subdomain integration",
+        "server": "react-scripts start",
+        "test": "react-scripts test",
+        "stop": "kill-port 8301 && kill-port 4049 && kill-port 4040",
+        "start-dev:integration": "npm run dev-express",
+        "dev-express": "ts-node-dev --transpile-only --inspect=49001 --watch ./.env ./src/integration/integration.ts",
+        "express": "ts-node ./src/integration/integration.ts"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "dotenv": "^16.0.1",
+        "evernote": "^2.0.5",
+        "express": "^4.17.1",
+        "gridjs": "^5.0.2",
+        "gridjs-react": "^5.0.2",
+        "jsonwebtoken": "^8.5.1",
+        "localtunnel": "^2.0.2",
+        "monday-sdk-js": "^0.1.3",
+        "monday-ui-react-core": "1.32.0",
+        "react-content-loader": "^6.2.0",
+        "ts-node": "^10.8.1"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^12.1.5",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/evernote": "^2.0.2",
+        "@types/express": "^4.17.9",
+        "@types/jsonwebtoken": "^8.5.8",
+        "@types/monday-sdk-js": "^0.1.5",
+        "@types/react": "^17.0.39",
+        "concurrently": "^5.2.0",
+        "cross-port-killer": "^1.2.1",
+        "jest": "^28.1.0",
+        "prettier": "^2.6.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-scripts": "5.0.1",
+        "ts-node-dev": "^2.0.0",
+        "tslib": "^2.4.0",
+        "typescript": "^4.7.2"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

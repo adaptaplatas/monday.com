@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "experimentalDecorators": true,
+        "skipDefaultLibCheck": true,
+        "noImplicitAny": false,
+        "jsx": "react",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "types": ["jest", "node", "react"]
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}
