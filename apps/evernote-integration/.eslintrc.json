@@ -1,16 +1,21 @@
 {
-  "env": {
-    "es2020": true,
-    "node": true,
-    "mocha": true
-  },
-  "globals": {
-    "logger": true,
-    "secrets": true
-  },
-  "settings": {
-    "flowtype": {
-      "onlyFilesWithFlowAnnotation": false
+    "env": {
+        "es2020": true,
+        "node": true,
+        "mocha": true
+    },
+    "globals": {
+        "logger": true,
+        "secrets": true
+    },
+    "settings": {
+        "flowtype": {
+            "onlyFilesWithFlowAnnotation": false
+        }
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "ecmaVersion": 2020 // needed to support spread in objects
     }
-  }
 }

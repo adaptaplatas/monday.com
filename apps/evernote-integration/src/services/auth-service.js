@@ -20,13 +20,17 @@ const getToken = async (oauth_token, oauth_verifier) => {
 };
 
 const getRedirectUri = (userId, backToUrl) => {
-  return `${cache.get(cacheKeys.SERVER_URL)}/auth/callback/${userId}?backToUrl=${ backToUrl }`;
+  return `${ cache.get(cacheKeys.SERVER_URL) }/auth/callback/${ userId }?backToUrl=${ backToUrl }`;
 };
 
 const getEvernoteConsumerClient = () => new evernote.Client({
-  consumerKey: process.env.EVERNOTE_CONSUMER_KEY,
-  consumerSecret: process.env.EVERNOTE_CONSUMER_SECRET,
+  consumerKey: process.env.EVERNOTE_FULL_CONSUMER_KEY,
+  consumerSecret: process.env.EVERNOTE_FULL_CONSUMER_SECRET,
   sandbox: true // change to false when you are ready to switch to production
 });
 
-module.exports = { getRedirectUri, getToken, getEvernoteConsumerClient };
+module.exports = {
+  getRedirectUri,
+  getToken,
+  getEvernoteConsumerClient
+};

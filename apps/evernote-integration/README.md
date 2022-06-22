@@ -1,18 +1,9 @@
 ## Overview
 
-This is the "Slack Integration" example Monday app.
-<br>It can be used as a board recipe:
+This is a monday integration which joins a board with Evernote when a item changes. Right now the only
+information sent is the status of the item, which is the expected column to change. <br>
 
-- When an update is created, post it in <b>this channel</b>
-
-<br>This app demonstrates how to use:
-
-- integration recipe
-- custom action
-- call authentication with JWT
-- query monday API using short lived token (seamless authentication)
-- remote options for custom fields
-- oAuth proccess to 3rd party
+**IMPORTANT**: This app needs an API key for Evernote with FULL access permissions, NOT basic access.
 
 ## Install
 
@@ -31,6 +22,7 @@ $ nvm use
 $ npm install
 ```
 
+You will also need to add your monday signing secret and evernote api key to the `.env` file.
 ## Run the project
 
 1. Run the server with the command:
@@ -38,3 +30,17 @@ $ npm install
 ```
 $ npm start
 ```
+
+## Monday Action
+
+You'll need to create the companion *Monday.com* action as well. For this, create an app
+feature for integration, and add a new action in the *Workflow Blocks* option with this data:
+
+* Input fields:![img.png](images/fields.png)
+* Sentence: no sentence fields are used so just add the text `write a new note.`.
+* Api Configuration:![img.png](images/api-config.png)
+
+After this just add a new recipe which uses this action and a trigger you'd need. The code of
+the current app, as mentioned previously, expects a `status` column change and retrieves it from
+the item data in file `src/controllers/monday-controller.js` at line `39`. You can modify this code 
+to retrieve different data.

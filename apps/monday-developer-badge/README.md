@@ -1,14 +1,7 @@
 ## Overview
-This is the "Quickstart React" example Monday app. 
-<br>It can be used as a board view or dashboard widget, connected to a board and render data from the board using settings.
 
-<br>This app demonstrates how to use: 
-- [settings](https://github.com/mondaycom/monday-sdk-js#mondaygettype-params--) 
-- [context](https://github.com/mondaycom/monday-sdk-js#mondaygettype-params--) 
-- [API](https://github.com/mondaycom/monday-sdk-js#mondayapiquery-options--)
-
-<br>You can find more info in our QuickStart guide [here](https://monday.com/developers/apps/quickstart-view/)
-<br /> ![Screenshot](https://dapulse-res.cloudinary.com/image/upload/w_900/v1591485466/remote_mondaycom_static/developers/screenshots/final_view.gif)
+This is a monday integration which joins a board with Evernote when a item changes. Right now the only
+information sent is the status of the item, which is the spected column to change.
 
 ## Run the project
 

@@ -218,3 +218,5 @@ vault/policies
 vault/tmp
 
 
+package-lock.json
+database.sqlite3

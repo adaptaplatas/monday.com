@@ -1,5 +1,5 @@
 // const authService = require('../services/auth-service');
-const connectionModelService = require('../services/model-services/connection-model-service');
+const userTokenModelService = require('../services/model-services/usertoken-model-service');
 const { cache, cacheKeys } = require("../services/cache-service")
 const authService = require('../services/auth-service');
 
@@ -22,7 +22,7 @@ const evernoteAuthenticatedCallback = async (req, res) => {
   try {
     const token = await authService.getToken(oauth_token, oauth_verifier);
 
-    await connectionModelService.createConnection(userId, token);
+    await userTokenModelService.create({userId, token});
 
     return res.redirect(backToUrl);
   } catch(err) {
